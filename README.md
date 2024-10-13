@@ -1,6 +1,6 @@
 # **Agentic-RAG Implementation - Q/A-Based System** 
 
-[![Watch the video][test_1_thumbnail.png]](test_1.mp4)
+[![Watch the video](test_1_thumbnail.png)](test_1.mp4)
 
 This project implements a **Retrieval-Augmented Generation (RAG)** pipeline designed to answer questions based on the content of a knowledge base PDF. The system is enhanced with the agents that performs intelligent actions such as:
 
@@ -29,7 +29,7 @@ The Routing Algorithm is chosen for agent creation because the use case is strai
 
 ![Image 2](fig_2_understanding_agents.png) 
 
-![Image 3](Fig_3_algorithm_utilized_for_agents.png)
+![Image 3](fig_3_algorithm_utilized_for_agents.png)
 
 [Source](https://youtu.be/aQ4yQXeB1Ss?si=972eIHd_H6rKX06u)
 
