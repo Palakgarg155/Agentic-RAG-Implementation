@@ -31,7 +31,7 @@ The Routing Algorithm is chosen for agent creation because the use case is strai
 
 ![Image 3](fig_3_algorithm_utilized_for_agent.png)
 
-[Source](https://youtu.be/aQ4yQXeB1Ss?si=972eIHd_H6rKX06u)
+[(Source of Fig 2 and Fig 3)](https://youtu.be/aQ4yQXeB1Ss?si=972eIHd_H6rKX06u)
 
 1. **Agent for Selective Retrieval**
 
