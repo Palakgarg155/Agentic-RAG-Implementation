@@ -41,7 +41,7 @@ It utilizes regular expressions to search for exact matches within the query. Th
 - Returning `True` if any keyword matches, indicating relevance to the domain; otherwise, it returns `False`.
 - If `True`, the query invokes the chain for response generation; if `False`, it does not invoke the chain and instead returns the message, "The query is not relevant to Chapter 11: Sound."
 
-2. **Web Search Integration**
+2. **Agent for Web Search Integration**
 
 It facilitates querying the Google Custom Search API and retrieving relevant links based on user input. It  consists of two classes: GoogleSearchClient and SearchManager.
 
