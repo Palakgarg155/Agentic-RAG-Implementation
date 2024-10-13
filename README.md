@@ -27,9 +27,9 @@ The system is designed to retrieve and generate responses based on content from 
 
 The Routing Algorithm is chosen for agent creation because the use case is straightforward and does not necessitate the use of a large language model (LLM) for decision making. For example, in Selective Retrieval, most queries contain generic keywords. Even if a small fraction of queries are not addressed, the trade-off of employing an LLM for every decision is significantly greater than the minimal failure rate in this context.
 
-![Image 2](fig_2_understanding_agent.png) 
+![Image 2](fig_2_understanding_agents.png) 
 
-![Image 3](fig_3_algorithm_utilized_for_agent.png)
+![Image 3](fig_3_algorithm_used_for_making_agent.png)
 
 [(Source of Fig 2 and Fig 3)](https://youtu.be/aQ4yQXeB1Ss?si=972eIHd_H6rKX06u)
 
