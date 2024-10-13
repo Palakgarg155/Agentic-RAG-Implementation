@@ -1,6 +1,6 @@
 # **Agentic-RAG Implementation - Q/A-Based System** 
 
-[![Watch the video]](Test_1.mp4)
+[![Watch the video][test_1_thumbnail.png]](test_1.mp4)
 
 This project implements a **Retrieval-Augmented Generation (RAG)** pipeline designed to answer questions based on the content of a knowledge base PDF. The system is enhanced with the agents that performs intelligent actions such as:
 
@@ -9,7 +9,7 @@ This project implements a **Retrieval-Augmented Generation (RAG)** pipeline desi
 
 The **Text-to-Speech Integration** utilizes SarvamAI's API to convert text-based responses into speech for an improved user experience.
 
-![Image 1](Fig_1_Architecture.jpg)
+![Image 1](fig_1_architecture.jpg)
 
 ## **Knowledge Base**
 
@@ -27,9 +27,9 @@ The system is designed to retrieve and generate responses based on content from 
 
 The Routing Algorithm is chosen for agent creation because the use case is straightforward and does not necessitate the use of a large language model (LLM) for decision making. For example, in Selective Retrieval, most queries contain generic keywords. Even if a small fraction of queries are not addressed, the trade-off of employing an LLM for every decision is significantly greater than the minimal failure rate in this context.
 
-![Image 2](Fig_2_Understanding_Agents.png) 
+![Image 2](fig_2_understanding_agents.png) 
 
-![Image 3](Fig_3_Algorithm_Utilized_for_Agents.png)
+![Image 3](Fig_3_algorithm_utilized_for_agents.png)
 
 [Source](https://youtu.be/aQ4yQXeB1Ss?si=972eIHd_H6rKX06u)
 
