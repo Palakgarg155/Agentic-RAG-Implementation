@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Agentic RAG</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #1e1e1e;
+            color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+        .container {
+            background-color: #2a2a2a;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            padding: 40px;
+            width: 100%;
+            max-width: 600px;
+            border: 2px solid #4e4e4e;
+        }
+        h1 {
+            margin: 0 0 25px;
+            font-size: 24px;
+            color: #ffffff;
+        }   
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        input {
+            padding: 15px;
+            margin: 15px 0;
+            border: 2px solid #4e4e4e;
+            border-radius: 6px;
+            transition: border-color 0.3s;
+            font-size: 16px;
+            width: 100%;
+            background-color: #3a3a3a;
+            color: #f5f5f5;
+            box-sizing: border-box;
+        }
+        input:focus {
+            border-color: #8b5a2b;
+            background-color: #454545;
+        }
+        button {
+            padding: 15px;
+            margin-top: 10px;
+            background-color: #4e4e4e;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #8b5a2b;
+        }
+        .response {
+            margin-top: 25px;
+            padding: 20px;
+            border-radius: 6px;
+            background-color: #3a3a3a;
+            color: #f5f5f5;
+            display: none;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            text-align: left;
+        }
+        h3, p {
+            margin: 0; 
+        }
+        audio {
+            margin-top: 15px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Ask a Question Related to Chapter 11: Sound </h1>
+        <h4>(Class 9th NCERT Science Textbook)</h4>
+        <form id="queryForm">
+            <input type="text" id="question" name="question" required placeholder="Enter your question">
+            <button type="submit">Ask</button>
+        </form>
+
+        <div class="response" id="responseDiv">
+            <h3>Response</h3>
+            <br>
+            <p id="responseText"></p>
+            <audio id="audioPlayer" controls style="display: none;">
+                <source id="audioSource" src="" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </div>
+
+<script>
+    document.getElementById('queryForm').addEventListener('submit', async function(event) {
+        event.preventDefault();
+        const question = document.getElementById('question').value;
+        const response = await fetch('http://localhost:8000/ask/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ question }),
+        });
+        const result = await response.json();
+        
+        // Update response text
+        document.getElementById('responseText').innerText = result.response;
+
+        // Set audio source
+        document.getElementById('audioSource').src = `http://localhost:8000/audio/output_audio.wav`; 
+        document.getElementById('audioPlayer').style.display = 'block';
+        document.getElementById('audioPlayer').load();
+        
+        document.getElementById('responseDiv').style.display = 'block';
+
+        // Create links container
+        const linksContainer = document.createElement('ul');  
+        linksContainer.id = 'linksContainer';
+       
+        if (document.getElementById('linksContainer')) {
+            document.getElementById('linksContainer').remove();
+        }
+
+        if (result.links && result.links.length > 0) {
+            result.links.forEach(link => {
+                const listItem = document.createElement('li');
+                const linkElement = document.createElement('a');
+                linkElement.href = link;
+                linkElement.innerText = link;
+                linkElement.style.color = '#8b5a2b';  
+                linkElement.target = '_blank'; 
+                listItem.appendChild(linkElement);
+                linksContainer.appendChild(listItem);
+            });
+        }
+        
+        const audioPlayer = document.getElementById('audioPlayer');
+        audioPlayer.parentNode.insertBefore(linksContainer, audioPlayer);
+    });
+</script>
+
+</body>
+</html>
