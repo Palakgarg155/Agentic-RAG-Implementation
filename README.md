@@ -1,6 +1,6 @@
 # **Agentic-RAG Implementation (Q/A-Based System)** 
 
-Watch the video provided to see the results of several tests performed on the web app! https://youtu.be/Bs9V6aq1raE
+Watch the video provided to see the results of several tests performed on its web app! https://youtu.be/Bs9V6aq1raE
 
 [![Watch the video](tests_video_thumbnail.png)](https://youtu.be/Bs9V6aq1raE)
 
