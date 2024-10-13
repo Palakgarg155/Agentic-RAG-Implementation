@@ -1,6 +1,6 @@
 # **Agentic-RAG Implementation - Q/A-Based System** 
 
-[![Watch the video](video_thumbnail.png)](https://youtu.be/8MhhrnzaZ5E)
+[![Watch the video](video_thumbnail.png)](https://www.youtube.com/watch?v=HPxAjV9qXr0)
 
 This project implements a **Retrieval-Augmented Generation (RAG)** pipeline designed to answer questions based on the content of a knowledge base PDF. The system is enhanced with the agents that performs intelligent actions such as:
 
