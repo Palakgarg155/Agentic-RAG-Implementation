@@ -13,7 +13,9 @@ This project implements a **Retrieval-Augmented Generation (RAG)** pipeline desi
 
 The **Text-to-Speech Integration** utilizes SarvamAI's API to convert text-based responses into speech for an improved user experience.
 
+
 ![Image 1](fig_1_architecture_agentic_rag.jpg)
+
 
 ## **Knowledge Base**
 
